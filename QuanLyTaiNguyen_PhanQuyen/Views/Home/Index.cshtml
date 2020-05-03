@@ -1,0 +1,68 @@
+﻿@model QuanLyTaiNguyen_PhanQuyen.Models.UserFacade
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>Welcome!</h4>
+    <p>
+        ID: @Html.DisplayFor(model => Model.User.UserID) -
+        @Html.DisplayFor(model => Model.User.UserName)
+    </p>
+    <hr />
+    <h5>Your groups</h5>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+
+        @foreach (var item in Model.Groups)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GroupID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+        }
+    </table>
+    <hr />
+    <h5>Your resources</h5>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+
+        @foreach (var item in Model.Resources)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResourceID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+        }
+    </table>
+
+
+
+</div>
+

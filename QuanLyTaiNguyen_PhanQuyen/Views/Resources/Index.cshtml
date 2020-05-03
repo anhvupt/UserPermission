@@ -1,0 +1,61 @@
+﻿@model IEnumerable<QuanLyTaiNguyen_PhanQuyen.Models.ResourcesCatalog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create Category", "CreateCategory")
+</p>
+<p>
+    @Html.ActionLink("Create Resource", "CreateResource")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.resources.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resources.NameMethod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resources.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resources.Icon)
+        </th>
+        <th>
+            Category name
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.resources.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.resources.NameMethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.resources.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.resources.Icon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.resourceCategory.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.resources.ResourceID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.resources.ResourceID })
+            </td>
+        </tr>
+    }
+
+</table>

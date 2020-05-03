@@ -1,0 +1,87 @@
+﻿@model IEnumerable<QuanLyTaiNguyen_PhanQuyen.Models.GroupManagement>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Group ID
+        </th>
+        <th>
+            Group Name
+        </th>
+        <th>
+            Group Description
+        </th>
+        <th>
+            Resources ID
+        </th>
+        <th>
+            Resources
+        </th>
+        <th>
+            Resources description
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PerGroup.GroupID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PerGroup.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PerGroup.Description)
+        </td>
+        <td>
+            @{
+                if (@item.Resources != null)
+                {
+                    foreach (var r in item.Resources)
+                    {
+                        @Html.DisplayFor(rItem => r.ResourceID)<br />
+                    }
+                }
+            }
+        </td>
+        <td>
+            @{
+                if (@item.Resources != null)
+                {
+                    foreach (var r in item.Resources)
+                    {
+                        @Html.DisplayFor(rItem => r.Name)<br />
+                    }
+                }
+            }
+        </td>
+        <td>
+            @{
+                if (@item.Resources != null)
+                {
+                    foreach (var r in item.Resources)
+                    {
+                        @Html.DisplayFor(rItem => r.Description)<br />
+                    }
+                }
+            }
+        </td>
+        <td>
+            @Html.ActionLink("AddResources", "AddResources", new {  id=item.PerGroup.GroupID  }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

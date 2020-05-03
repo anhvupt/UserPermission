@@ -1,0 +1,7 @@
+﻿exec RecourceCategory_Insert 1, N'Product',N'nhom cac tac vu lien quan den san pham' 
+exec RecourceCategory_Insert 1, N'Order',N'nhom cac tac vu lien quan den don dat hang' 
+exec RecourceCategory_Insert 1, N'Bill',N'nhom cac tac vu lien quan den hoa don'
+exec RecourceCategory_Insert 1, N'Statistics',N'nhom cac tac vu lien quan den so lieu thong ke'
+exec RecourceCategory_Insert 1, N'Resource',N'nhom cac tac vu lien quan den tai nguyen he thong'
+exec RecourceCategory_Insert 1, N'Group',N'nhom cac tac vu lien quan den nhom quyen'
+exec RecourceCategory_Insert 1, N'User',N'nhom cac tac vu lien quan den nguoi dung'
