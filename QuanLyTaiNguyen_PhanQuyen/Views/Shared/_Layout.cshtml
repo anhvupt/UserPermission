@@ -5,9 +5,43 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        *{
+            box-sizing:border-box!important;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        a{
+            text-decoration:none !important;
+        }
+        .log-in{
+            width: 50% !important;
+            height:auto;
+        }
+        .navbar {
+            font-size: 120%;
+            padding-top: 10px;
+        }
+
+            .navbar li {
+                display: inline-block;
+            }
+            .navbar li a{
+                display: block;
+                cursor:pointer;
+                height: 40px;
+                width:120px;
+                text-decoration:none;
+                border-radius: 5px;
+            }
+                .navbar li a:hover{
+                    color: #ff6a00;
+                }
+    </style>
 </head>
 <body>
-    <div>
+    @*@Html.Partial("~Views/Shared/Navbar");*@
+    <div class="container">
         @RenderBody()
     </div>
 </body>

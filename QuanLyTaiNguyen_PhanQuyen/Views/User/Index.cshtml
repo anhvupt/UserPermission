@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<QuanLyTaiNguyen_PhanQuyen.Models.UserManagement>
 
+@Html.Partial("~/Views/Shared/Navbar.cshtml")
+
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,52 +22,53 @@
         <th>Description</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.UserID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.UserName)
-        </td>
-        <td>
-            @{
-                if (@item.Groups != null)
-                {
-                    foreach (var g in item.Groups)
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserName)
+            </td>
+            <td>
+                @{
+                    if (@item.Groups != null)
                     {
-                        @Html.DisplayFor(gItem => g.GroupID)<br />
+                        foreach (var g in item.Groups)
+                        {
+                            @Html.DisplayFor(gItem => g.GroupID)<br />
+                        }
                     }
                 }
-            }
-        </td>
-        <td>
-            @{
-                if (@item.Groups != null)
-                {
-                    foreach (var g in item.Groups)
+            </td>
+            <td>
+                @{
+                    if (@item.Groups != null)
                     {
-                        @Html.DisplayFor(gItem => g.Name)<br />
+                        foreach (var g in item.Groups)
+                        {
+                            @Html.DisplayFor(gItem => g.Name)<br />
+                        }
                     }
                 }
-            }
-        </td>
-        <td>
-            @{
-                if (@item.Groups != null)
-                {
-                    foreach (var g in item.Groups)
+            </td>
+            <td>
+                @{
+                    if (@item.Groups != null)
                     {
-                        @Html.DisplayFor(gItem => g.Description)<br />
+                        foreach (var g in item.Groups)
+                        {
+                            @Html.DisplayFor(gItem => g.Description)<br />
+                        }
                     }
                 }
-            }
-        </td>
-        <td>
-            @Html.ActionLink("AddGroups", "AddGroups", new { id=item.User.UserID  }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+            </td>
+            <td>
+                @Html.ActionLink("AddGroups", "AddGroups", new { id = item.User.UserID }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
 
 </table>

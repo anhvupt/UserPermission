@@ -1,9 +1,12 @@
 ﻿@model DataAccess.DTO.ResourceCategory
 
-@using (Html.BeginForm()) 
+@Html.Partial("~/Views/Shared/Navbar.cshtml")
+
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>ResourceCategory</h4>
         <hr />

@@ -1,9 +1,12 @@
 ﻿@model DataAccess.Resources
 
-@using (Html.BeginForm()) 
+@Html.Partial("~/Views/Shared/Navbar.cshtml")
+
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Resources</h4>
         <hr />
@@ -19,7 +22,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CategoryID, new { htmlAttributes = new { @class = "form-control", @type="string" } })
+                @Html.EditorFor(model => model.CategoryID, new { htmlAttributes = new { @class = "form-control", @type = "string" } })
                 @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
             </div>
         </div>

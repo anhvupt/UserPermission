@@ -8,7 +8,7 @@ namespace QuanLyTaiNguyen_PhanQuyen.Models
 {
     public class UserFacade
     {
-        public User User;
+        public User User = new User();
         public List<PerGroup> Groups;
         public List<Resources> Resources;
 

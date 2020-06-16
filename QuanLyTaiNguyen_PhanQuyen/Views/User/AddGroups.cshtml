@@ -1,5 +1,8 @@
 ﻿@model DataAccess.UserGroup
 
+@Html.Partial("~/Views/Shared/Navbar.cshtml")
+
+
 @{
     ViewBag.Title = "AddGroups";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,10 +10,10 @@
 
 <h2>AddGroups</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>UserGroup</h4>
         <hr />
@@ -26,7 +29,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.GroupID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.GroupID, new { htmlAttributes = new { @class = "form-control", @type="string" } })
+                @Html.EditorFor(model => model.GroupID, new { htmlAttributes = new { @class = "form-control", @type = "string" } })
                 @Html.ValidationMessageFor(model => model.GroupID, "", new { @class = "text-danger" })
             </div>
         </div>

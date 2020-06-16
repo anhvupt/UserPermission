@@ -1,9 +1,12 @@
 ﻿@model DataAccess.Resources
 
+@Html.Partial("~/Views/Shared/Navbar.cshtml")
+
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Resources</h4>
         <hr />
